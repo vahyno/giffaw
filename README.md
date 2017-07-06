@@ -2,7 +2,7 @@
 
 Your goal is to integrate with the Giphy API.
 
-https://github.com/Giphy/GiphyAPI
+https://developers.giphy.com/docs/
 
 Basic Requirements:
 
@@ -28,7 +28,7 @@ Make use of the fantastic Giphy api:
 http://api.giphy.com/
 
 Check out the documentation here:
-https://github.com/Giphy/GiphyAPI
+https://developers.giphy.com/docs/
 
 #### Thinking Like An Engineer
 
