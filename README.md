@@ -1,6 +1,6 @@
 # Giffaw
 
-Your goal is to integrate your Giffaw app with the Giphy API. By the end of this lab, your app should be able to retrieve and search Giphy's database of gifs.
+Your goal is to create a Giffaw app that integrates with the Giphy API. By the end of this lab, your app should be able to retrieve and search Giphy's database of gifs.
 
 ## Basic Requirements
 
