@@ -55,7 +55,7 @@ Here's some steps to follow to help get you in this mindset:
 		method: "GET",
 
 		// The URL for the request
-		url: "http://api.api.com/search",
+		url: "http://api.giphy.com/search",
 
 		// The data to send aka query parameters
 		data: $("form").serialize(),
