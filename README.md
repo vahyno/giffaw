@@ -6,8 +6,8 @@ https://developers.giphy.com/docs/
 
 Basic Requirements:
 
-* A user can see the top 25 trending gifs (on page load) – Check out [Trending] section of Giphy documentation
-* A user can search for gifs, using the input field – Check out [Search] section of Giphy documentation
+* A user can see the top 25 trending gifs (on page load) – Check out [Trending](https://developers.giphy.com/docs/) section of Giphy documentation
+* A user can search for gifs, using the input field – Check out [Search](https://developers.giphy.com/docs/) section of Giphy documentation
 * Super Bonus: A user can "load more" gifs
 
 Your site should look something like:
