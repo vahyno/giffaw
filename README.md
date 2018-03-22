@@ -36,7 +36,7 @@ Here's some steps to follow to help get you in this mindset:
 
 1. Review how to write an AJAX call
 	```js
-		$.ajax({
+	$.ajax({
 
 		// What kind of request
 		method: "GET",
@@ -72,15 +72,11 @@ We first want to write jQuery that returns and `console.log()`s that same JSON o
 	- Look at this example of an `$.ajax` request:
 	```js
 	$.ajax({
-
 		// What kind of request
 		method: "GET",
 
 		// The URL for the request
 		url: [put your trending API endpoint URL here],
-
-		// The data to send aka query parameters
-		data: $("form").serialize(),
 
 		// Code to run if the request succeeds;
 		// the response is passed to the function
@@ -118,9 +114,9 @@ We first want to write jQuery that returns and `console.log()`s that same JSON o
 		method: "GET",
 
 		// The URL for the request
-		url: [put your trending API endpoint URL here],
+		url: [put your search API endpoint URL here],
 
-		// The data to send aka query parameters
+		// The data to send aka your search term options
 		data: $("form").serialize(),
 
 		// Code to run if the request succeeds;
