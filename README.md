@@ -4,8 +4,8 @@ Your goal is to create a Giffaw app that integrates with the Giphy API. By the e
 
 ## Basic Requirements
 
-* A user can see the top 25 trending gifs on page load – See [Trending](https://developers.giphy.com/docs/) documentation
-* A user can search for gifs, using the input field – See [Search](https://developers.giphy.com/docs/) documentation
+* A user can see the top 25 trending gifs on page load 
+* A user can search for gifs, using the input field
 * BONUS: A user can click a "See More" button at the bottom of the page to load more gifs
 
 ![desktop layout](https://cloud.githubusercontent.com/assets/3010270/13936044/2ffadf60-ef78-11e5-95c5-55b8aefe68d6.png)
