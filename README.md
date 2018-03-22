@@ -1,10 +1,8 @@
 # Giffaw
 
-Your goal is to integrate your app with the Giphy API. By the end of this lab, your app should be able to retrieve and search Giphy's database of gifs.
+Your goal is to integrate your Giffaw app with the Giphy API. By the end of this lab, your app should be able to retrieve and search Giphy's database of gifs.
 
-https://developers.giphy.com/docs/
-
-Basic Requirements:
+## Basic Requirements
 
 * A user can see the top 25 trending gifs on page load – See [Trending](https://developers.giphy.com/docs/) documentation
 * A user can search for gifs, using the input field – See [Search](https://developers.giphy.com/docs/) documentation
@@ -14,34 +12,66 @@ Your site should look something like:
 
 ![desktop layout](https://cloud.githubusercontent.com/assets/3010270/13936044/2ffadf60-ef78-11e5-95c5-55b8aefe68d6.png)
 
-
 ## Introduction
 
-You're about to write a lot of AJAX-backed JavaScript using jQuery that will complete our little Gif app.
+You will need to write AJAX calls in your JavaScript file to get data from the Giphy API and power your Giffaw app.
 
-Make use of the fantastic Giphy api:
-http://api.giphy.com/
+Make use of the fantastic Giphy API [here](http://developers.giphy.com/). Check out the documentation [here](https://developers.giphy.com/docs/).
 
-Check out the documentation here:
-https://developers.giphy.com/docs/
+## Preparation: Thinking Like An Engineer
 
-#### Thinking Like An Engineer
-
-As we get into more complicated problems, we need to start thinking more and more like engineers. Engineers break down large problems into the smallest possible parts, and tackle each small part one at a time.
-
-This is one of the major skills for web development!
+As we get into more complicated problems, we need to start thinking more and more like engineers. Engineers break down large problems into the smallest possible parts, and tackle each small part one at a time. This is one of the major skills for web development!
 
 Here's some steps to follow to help get you in this mindset:
 
-1. Familiarize yourself with the [docs](https://github.com/Giphy/GiphyAPI)
-	- Specifically, we will be using the [search endpoint](https://github.com/Giphy/GiphyAPI#search-endpoint)
-		- Also note the ever-important API Key situation (We will be using the [Public Beta API key](https://github.com/Giphy/GiphyAPI#public-beta-key))
+1. Familiarize yourself with the [docs](https://developers.giphy.com/docs/)
+	- Get particularly familiar with the Trending and Search endpoints
+	- Note that you need an API key to access the API (none of your AJAX calls will work without one!)
 
-2. Test the API out in your browser!
-	- Go to http://api.giphy.com/v1/gifs/search?q=cats&api_key=dc6zaTOxFJmzC. This is the API request for the search term `cats`.
-	- What do you see? It's a JSON Object!
+1. Get that API key!
+	- Follow the directions in the documentation to get an API key (does NOT have to be a production API key)
 
-3. Clone this project. We first want to write jQuery that returns and `console.log()`s that same object we saw when we opened the API in our browser. BUT HOW DO I AJAX!!??
+1. Test the API out in your browser before writing any code (i.e. your AJAX calls)
+	- Go to an API endpoint in your browser, using your API key
+	- For example: go to http://api.giphy.com/v1/gifs/search?q=cats&api_key=whatever-your-api-key-is-here in your browser to see your search request result for the search-term "cats"
+	- You should see a JSON object with your API response
+
+1. Review how to write an AJAX call
+
+```js
+	$.ajax({
+
+	// What kind of request
+	method: "GET",
+
+	// The URL for the request
+	url: "http://api.giphy.com/search",
+
+	// The data to send aka query parameters
+	data: $("form").serialize(),
+
+	// Code to run if the request succeeds;
+	// the response is passed to the function
+	success: function(json) {
+		$("div").append("<h1>"+json.title+"</h1>");
+	},
+
+	// Code to run if the request fails; the raw request and
+	// status codes are passed to the function
+	error: function (xhr, status, errorThrown) {
+		alert("Sorry, there was a problem!");
+		console.log("Status: " + status);
+		console.log("Error: " + errorThrown);
+	}
+});
+```
+
+1. Fork and clone this project, and start looking around!
+	- Are your HTML, CSS, and JS files all linked together properly?
+
+## Get Trending Gifs
+
+We first want to write jQuery that returns and `console.log()`s that same object we saw when we opened the API in our browser. BUT HOW DO I AJAX!!??
 	- Look at this example of an `$.ajax` request:
 	```js
 	$.ajax({
