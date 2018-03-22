@@ -14,9 +14,7 @@ Your site should look something like:
 
 ## Introduction
 
-You will need to write AJAX calls in your JavaScript file to get data from the Giphy API and power your Giffaw app.
-
-Make use of the fantastic Giphy API [here](http://developers.giphy.com/). Check out the documentation [here](https://developers.giphy.com/docs/).
+You will need to write AJAX calls in your JavaScript file to get data from the Giphy API [here](http://developers.giphy.com/) and power your Giffaw app.
 
 ## Preparation: Thinking Like An Engineer
 
@@ -37,44 +35,8 @@ Here's some steps to follow to help get you in this mindset:
 	- You should see a JSON object with your API response
 
 1. Review how to write an AJAX call
-
-```js
-	$.ajax({
-
-	// What kind of request
-	method: "GET",
-
-	// The URL for the request
-	url: "http://api.giphy.com/search",
-
-	// The data to send aka query parameters
-	data: $("form").serialize(),
-
-	// Code to run if the request succeeds;
-	// the response is passed to the function
-	success: function(json) {
-		$("div").append("<h1>"+json.title+"</h1>");
-	},
-
-	// Code to run if the request fails; the raw request and
-	// status codes are passed to the function
-	error: function (xhr, status, errorThrown) {
-		alert("Sorry, there was a problem!");
-		console.log("Status: " + status);
-		console.log("Error: " + errorThrown);
-	}
-});
-```
-
-1. Fork and clone this project, and start looking around!
-	- Are your HTML, CSS, and JS files all linked together properly?
-
-## Get Trending Gifs
-
-We first want to write jQuery that returns and `console.log()`s that same object we saw when we opened the API in our browser. BUT HOW DO I AJAX!!??
-	- Look at this example of an `$.ajax` request:
 	```js
-	$.ajax({
+		$.ajax({
 
 		// What kind of request
 		method: "GET",
@@ -87,23 +49,55 @@ We first want to write jQuery that returns and `console.log()`s that same object
 
 		// Code to run if the request succeeds;
 		// the response is passed to the function
-		success: onSuccess,
+		success: function(json) {
+			$("div").append("<h1>"+json.title+"</h1>");
+		},
 
 		// Code to run if the request fails; the raw request and
 		// status codes are passed to the function
-		error: onError
+		error: function (xhr, status, errorThrown) {
+			alert("Sorry, there was a problem!");
+			console.log("Status: " + status);
+			console.log("Error: " + errorThrown);
+		}
 	});
+	```
 
-	function onSuccess(json) {
-		$("div").append("<h1>"+json.title+"</h1>");
-	}
+1. Fork and clone this project, and start looking around!
+	- Are your HTML, CSS, and JS files all linked together properly?
 
-	function onError(xhr, status, errorThrown) {
-		alert("Sorry, there was a problem!");
-		console.log("Error: " + errorThrown);
-		console.log("Status: " + status);
-		console.dir(xhr);
-	}
+## Get Trending Gifs
+
+We first want to write jQuery that returns and `console.log()`s that same JSON object we saw when we visited an API endpoint in our browser. How do we do this?
+	- Look at this example of an `$.ajax` request:
+	```js
+	$.ajax({
+
+		// What kind of request
+		method: "GET",
+
+		// The URL for the request
+		url: [put your trending API endpoint URL here],
+
+		// The data to send aka query parameters
+		data: $("form").serialize(),
+
+		// Code to run if the request succeeds;
+		// the response is passed to the function
+		success: function(json) {
+			// console.log this json argument to see if you got the correct data!
+			// Once you have the correct data showing up, you should iterate through the 25 gifs you got
+			// and start appending them to the <div class="gif-gallery"></div> in your HTML page
+		},
+
+		// Code to run if the request fails; the raw request and
+		// status codes are passed to the function
+		error: function (xhr, status, errorThrown) {
+			alert("Sorry, there was a problem!");
+			console.log("Status: " + status);
+			console.log("Error: " + errorThrown);
+		}
+	});
 	```
 	- How would you repurpose this to GET the data you want from the URL you want.
 		- What is your base API url? What are the query parameters?
@@ -114,13 +108,48 @@ We first want to write jQuery that returns and `console.log()`s that same object
 	- Once you narrowed that down, THEN you want to build functions that generate HTML Strings and `append()` them to the page.
 	- First log those strings to the console, and make sure they look like you think they should. THEN append them into the DOM!
 
-5. Can you bonus? Get the input box to make a different AJAX call to the search URL.
+
+## Search Gifs
+
+```js
+	$.ajax({
+
+		// What kind of request
+		method: "GET",
+
+		// The URL for the request
+		url: [put your trending API endpoint URL here],
+
+		// The data to send aka query parameters
+		data: $("form").serialize(),
+
+		// Code to run if the request succeeds;
+		// the response is passed to the function
+		success: function(json) {
+			// console.log this json argument to see if you got the correct data!
+			// Once you have the correct data showing up, you should iterate through the 25 gifs you got
+			// and start appending them to the <div class="gif-gallery"></div> in your HTML page
+		},
+
+		// Code to run if the request fails; the raw request and
+		// status codes are passed to the function
+		error: function (xhr, status, errorThrown) {
+			alert("Sorry, there was a problem!");
+			console.log("Status: " + status);
+			console.log("Error: " + errorThrown);
+		}
+	});
+```
+
+1. Get the input box to make a different AJAX call to the search URL.
 	- Does a search box button have a default action? What do we want do with that?
-	- Are we just appending more and more gifs to the dom? Do we need to clear previous gifs before loading more?
+	- Are we just appending more and more gifs to the DOM? Do we need to clear previous gifs before loading more?
 	- OMG are you making a one page app using AJAX like a boss?
 
-6. Can you do the BONUS? Add a `Load More` button that, when clicked, appends 25 more gifs to the bottom of the page.
-	- You will need to make use of the `offset` query parameter. See [Search Endpoint](https://github.com/Giphy/GiphyAPI#search-endpoint) section for more information.
+## BONUS
+1. Add a `Load More` button that, when clicked, appends 25 more gifs to the bottom of the page.
+	- Use the `offset` query parameter 
+	- See Giphy's Search API documentation for more information.
 
 ## Solution 
 - Solution in the [`solution` branch](https://github.com/SF-WDI-LABS/giffaw/tree/solution)
