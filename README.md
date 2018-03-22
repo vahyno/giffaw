@@ -123,7 +123,7 @@ Let's allow users of our Giffaw app to type in a search term and get back releva
 	- In `scripts/app.js`, write some JQuery code to add a 'submit' handler to the form
 
 1. Once we press submit on the form, we want to do several things: 
-	- Form submissions usually make the whole page navigate somewhere else – we want to prevent this default behavior
+	- Form submissions usually make the whole page navigate somewhere else – we want to [prevent this default behavior](https://api.jquery.com/event.preventdefault/)! 
 	- Next, we want to make an AJAX call to the Giphy API's Search endpoint, using the search term the user typed into the form
 	
 	```js
@@ -133,7 +133,7 @@ Let's allow users of our Giffaw app to type in a search term and get back releva
 		method: "GET",
 
 		// The URL for the request
-		url: [put your search API endpoint URL here],
+		url: /* put your search API endpoint URL here – you DO NOT need your API key for this URL, because it's already in your HTML form!] */,
 
 		// The data to send aka your search term options
 		data: $("form").serialize(),
