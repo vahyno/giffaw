@@ -1,24 +1,19 @@
 # Giffaw
 
-Your goal is to integrate with the Giphy API.
+Your goal is to integrate your app with the Giphy API. By the end of this lab, your app should be able to retrieve and search Giphy's database of gifs.
 
 https://developers.giphy.com/docs/
 
 Basic Requirements:
 
-* A user can see the top 25 trending gifs (on page load) – Check out [Trending](https://developers.giphy.com/docs/) section of Giphy documentation
-* A user can search for gifs, using the input field – Check out [Search](https://developers.giphy.com/docs/) section of Giphy documentation
-* Super Bonus: A user can "load more" gifs
+* A user can see the top 25 trending gifs on page load – See [Trending](https://developers.giphy.com/docs/) documentation
+* A user can search for gifs, using the input field – See [Search](https://developers.giphy.com/docs/) documentation
+* BONUS: A user can click a "See More" button at the bottom of the page to load more gifs
 
 Your site should look something like:
 
 ![desktop layout](https://cloud.githubusercontent.com/assets/3010270/13936044/2ffadf60-ef78-11e5-95c5-55b8aefe68d6.png)
 
-Solution in the `solution` branch. Load More button solution in the `solution-more` branch.
-```
-	git checkout solution
-```
-OR just view in the browser by selecting the branch you want from the branch dropdown.
 
 ## Introduction
 
@@ -94,8 +89,12 @@ Here's some steps to follow to help get you in this mindset:
 	- Are we just appending more and more gifs to the dom? Do we need to clear previous gifs before loading more?
 	- OMG are you making a one page app using AJAX like a boss?
 
-6. Can you super bonus? Add a `Load More` button that, when clicked, appends 25 more gifs to the bottom of the page.
+6. Can you do the BONUS? Add a `Load More` button that, when clicked, appends 25 more gifs to the bottom of the page.
 	- You will need to make use of the `offset` query parameter. See [Search Endpoint](https://github.com/Giphy/GiphyAPI#search-endpoint) section for more information.
+
+## Solution 
+- Solution in the [`solution` branch](https://github.com/SF-WDI-LABS/giffaw/tree/solution)
+- "Load More" button solution in the [`solution-more` branch](https://github.com/SF-WDI-LABS/giffaw/tree/solution-more)
 
 ## Additional Resources
 
