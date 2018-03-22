@@ -15,7 +15,7 @@ As we get into more complicated labs & problems, practice thinking like engineer
 
 ![planning](https://media2.giphy.com/media/l0IylOPCNkiqOgMyA/giphy.gif)
 
-You will need to write AJAX calls in your JavaScript file to get data from the Giphy API [here](http://developers.giphy.com/) and power your app. Here are some steps to start planning for this:
+Your app needs AJAX calls to get gifs from the Giphy API and display them on the page. Here are some steps to start planning:
 
 1. Familiarize yourself with the [Giphy docs](https://developers.giphy.com/docs/)
 	- Note that you need an API key to access the Giphy API (none of your AJAX calls will work without one!)
