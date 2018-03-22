@@ -11,12 +11,11 @@ Your goal is to create a Giffaw app that integrates with the Giphy API. By the e
 ![desktop layout](https://cloud.githubusercontent.com/assets/3010270/13936044/2ffadf60-ef78-11e5-95c5-55b8aefe68d6.png)
 
 ## Introduction: Think Like An Engineer
-
-You will need to write AJAX calls in your JavaScript file to get data from the Giphy API [here](http://developers.giphy.com/) and power your Giffaw app.
-
 As we get into more complicated labs & problems, practice thinking like engineers. Engineers break down large problems into the smallest possible parts, and tackle each small part one at a time. This is an extremely valuable skill in web development, and one that you will need to nurture throughout your coding journey.
 
-Here are some steps to get you into this mindset for Giffaw:
+![planning](https://media2.giphy.com/media/l0IylOPCNkiqOgMyA/giphy.gif)
+
+You will need to write AJAX calls in your JavaScript file to get data from the Giphy API [here](http://developers.giphy.com/) and power your app. Here are some steps to start planning for this:
 
 1. Familiarize yourself with the [Giphy docs](https://developers.giphy.com/docs/)
 	- Note that you need an API key to access the Giphy API (none of your AJAX calls will work without one!)
